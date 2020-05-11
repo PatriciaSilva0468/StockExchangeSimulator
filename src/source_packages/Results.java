@@ -1,3 +1,7 @@
+/**
+ * Result interface
+ * To separate implementation
+ */
 package source_packages;
 
 public interface Results {
