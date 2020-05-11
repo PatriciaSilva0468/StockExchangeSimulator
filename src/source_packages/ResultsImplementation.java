@@ -1,13 +1,17 @@
 package source_packages;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Implementation of the Results interface.
+ * Supporting the bridge pattern
+ */
 public class ResultsImplementation implements Results {
     private ArrayList<Company> companies;
     private ArrayList<Investor> investors;
 
-    public ResultsImplementation(ArrayList<Company> companies, ArrayList<Investor> investors) {
+    public ResultsImplementation(ArrayList<Company> companies,
+                                 ArrayList<Investor> investors) {
         this.companies = companies;
         this.investors = investors;
     }
@@ -15,6 +19,7 @@ public class ResultsImplementation implements Results {
     public void printTheMenu() {
         int choice;
         do {
+            // Print the menu and prompt for user choice
             System.out.println("-- MENU -- ");
             System.out.println("1 Company with the highest capital ");
             System.out.println("2 Company with the lowest capital ");
@@ -25,6 +30,8 @@ public class ResultsImplementation implements Results {
 
             Scanner scanner = new Scanner(System.in);
             choice = scanner.nextInt();
+
+            // adding a new line for neat interface
             System.out.println();
 
             switch (choice) {
@@ -46,6 +53,7 @@ public class ResultsImplementation implements Results {
                     System.out.println("Wrong option entered");
             }
 
+            // adding new line for neat interface
             System.out.println();
 
         } while (choice != 5);
