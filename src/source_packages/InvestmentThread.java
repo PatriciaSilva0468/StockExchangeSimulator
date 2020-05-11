@@ -1,26 +1,23 @@
-package source_packages;
-
-import java.util.ArrayList;
-
 /**
  * This thread will run for one investor.
  * The investor will iterate over all the companies and try to buy maximum
  * number of shares in maximum companies he can buy with his budget. This thread ends once the
  * investor is not able to buy more shares.
  */
+package source_packages;
+
 public class InvestmentThread implements Runnable {
     private Investor investor;
-    private ArrayList<Company> companies;
 
-    public InvestmentThread(Investor investor, ArrayList<Company> companies) {
+    public InvestmentThread(Investor investor) {
         this.investor = investor;
-        this.companies = companies;
     }
 
     @Override
     public void run() {
         // getting the least share the investor can buy at this time
-        double leastLimit = companies.get(0).getSharePrice();
+        double leastLimit = getCompanyWithLeastSharesPrice();
+
         boolean aCompanySoldTenShares = false;
 
         while (investor.getBudget() >= leastLimit) {
@@ -77,6 +74,9 @@ public class InvestmentThread implements Runnable {
 
                     }
 
+                    // update the capital
+                    company.setCompanyCapital(company.getSharePrice() * company.getOriginalShares());
+
                 }
 
                 if (investor.getBudget() < leastLimit) {
@@ -87,19 +87,31 @@ public class InvestmentThread implements Runnable {
             }
 
             // there is a chance a company reduced it's shares and now has least share price
-            leastLimit = getCompanyWithLeastShares();
+            leastLimit = getCompanyWithLeastSharesPrice();
 
         }
 
     }
 
-    private double getCompanyWithLeastShares() {
-        double minShare = companies.get(0).getSharePrice();
+    private double getCompanyWithLeastSharesPrice() {
+        // get a company iterator here
+        StockExchangeSimulator.CompanyIterator iterator =
+                StockExchangeSimulator.getStockExchangeSimulator().getCompanyIterator();
 
-        for (int i = 1; i < companies.size(); i++) {
-            if (minShare > companies.get(i).getSharesSold()) {
-                minShare = companies.get(i).getSharePrice();
+        // the first company
+        Company company = iterator.next();
 
+        // share price of the first company
+        double minShare = company.getSharePrice();
+
+        // match the share price with other companies share prices and collect the min share price
+        while (iterator.hasNext()) {
+            // the company
+            company = iterator.next();
+            // match if this company has more low share price than current min share
+            if (minShare > company.getSharePrice()) {
+                // update the min share
+                minShare = company.getSharePrice();
             }
 
         }
