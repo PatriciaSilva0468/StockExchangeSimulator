@@ -1,7 +1,13 @@
 package source_packages;
-
 import java.util.ArrayList;
 
+/**
+ * This represents an Investor with attributes:
+ * id,
+ * budget
+ * number of shares bought
+ * the transactions (each will contain one share bought)
+ */
 public class Investor {
     private int id;
     private double budget;
@@ -11,6 +17,10 @@ public class Investor {
     public Investor() {
         transactions = new ArrayList<>();
     }
+
+    /*
+     * The getters and setters of the attributes
+     * */
 
     public int getId() {
         return id;
@@ -44,6 +54,8 @@ public class Investor {
         this.transactions = transactions;
     }
 
+    /*
+     * The toString method to represent an Investor object with appropriate string*/
     @Override
     public String toString() {
         return "Investor ID: " + this.id +
