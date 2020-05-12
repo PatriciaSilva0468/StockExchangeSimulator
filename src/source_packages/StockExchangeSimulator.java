@@ -1,5 +1,4 @@
 package source_packages;
-
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -58,6 +57,33 @@ public class StockExchangeSimulator {
 
     }
 
+    public void printEverything() {
+        System.out.println("The companies:  ");
+        for (Company company : companies) {
+            System.out.println("ID:  " + company.getId());
+            System.out.println("Total shares:  " + company.getNumberOfShares());
+            System.out.println("Share price:  " + company.getSharePrice());
+            System.out.println("Share sold:  " + company.getSharesSold());
+            System.out.println("Company capital:  " + company.getCompanyCapital());
+
+            System.out.println();
+
+        }
+
+        System.out.println("The investors:  ");
+        for (Investor investor : investors) {
+            System.out.println("ID:  " + investor.getId());
+            System.out.println("Total budget:  " + investor.getBudget());
+            System.out.println("Shared bought:  " + investor.getNumberOfSharesBought());
+
+            System.out.println();
+
+        }
+
+
+    }
+
+
     public void getResults() {
         results.printTheMenu();
     }
@@ -76,8 +102,8 @@ public class StockExchangeSimulator {
         companies.sort(new Comparator<Company>() {
             @Override
             public int compare(Company o1, Company o2) {
-                return Double.compare(o1.getNumberOfShares() * o1.getSharePrice(),
-                        o2.getNumberOfShares() * o2.getSharePrice());
+                return Double.compare(o1.getCompanyCapital(),
+                        o2.getCompanyCapital());
             }
         });
 
@@ -145,13 +171,13 @@ public class StockExchangeSimulator {
 
     private void runTradingDay() {
         // create 100 threads, each thread for an investor and start them
-        Thread[] invesmentThreads = new Thread[100];
+        Thread[] investmentThreads = new Thread[100];
 
         for (int i = 0; i < 100; i++) {
-            invesmentThreads[i] = new Thread(
-                    new InvestmentThread(investors.get(i), companies));
+            investmentThreads[i] = new Thread(
+                    new InvestmentThread(investors.get(i)));
 
-            invesmentThreads[i].start();
+            investmentThreads[i].start();
 
         }
 
@@ -162,7 +188,7 @@ public class StockExchangeSimulator {
             try {
                 // wait for three seconds!
                 TimeUnit.SECONDS.sleep(3);
-                completed = !isAThreadAlive(invesmentThreads);
+                completed = !isAnyThreadAlive(investmentThreads);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -171,8 +197,10 @@ public class StockExchangeSimulator {
 
     }
 
-    private static boolean isAThreadAlive(Thread[] invesmentThreads) {
-        for (Thread thread : invesmentThreads) {
+    // If there is any thread that has not ended yet
+    // it will return true
+    private static boolean isAnyThreadAlive(Thread[] invesmentthreads) {
+        for (Thread thread : invesmentthreads) {
             if (thread.isAlive()) {
                 return true;
             }
