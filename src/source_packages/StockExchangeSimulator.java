@@ -1,3 +1,6 @@
+/**@author  Patricia Aparecida Da Silva (s2017146)
+ * Implementation of StockExchangeSimulator class
+ */
 package source_packages;
 import java.util.*;
 import java.util.concurrent.TimeUnit;

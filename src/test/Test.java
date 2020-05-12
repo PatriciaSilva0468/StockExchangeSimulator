@@ -1,8 +1,12 @@
-package source_packages;
+package test;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
+import source_packages.Company;
+import source_packages.Investor;
+import source_packages.StockExchangeSimulator;
+
+/**@author  Patricia Aparecida Da Silva (s2017146)
  * This is the test class for the Stock Exchange Simulator implemented.
  * It adds random companies and investors in the Stock Exchange, and executes the trading day
  * in Stock Exchange and at the end calls the results of the trading day

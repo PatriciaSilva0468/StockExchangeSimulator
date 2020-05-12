@@ -1,4 +1,4 @@
-/**
+/**@author  Patricia Aparecida Da Silva (s2017146)
  * This class represents Transactions made by the investor.
  * It contains the ID of investor,
  * ID of company in which an investment is made

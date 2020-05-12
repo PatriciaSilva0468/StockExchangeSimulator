@@ -1,4 +1,4 @@
-/**
+/**@author  Patricia Aparecida Da Silva (s2017146)
  * Result interface
  * To separate implementation
  */

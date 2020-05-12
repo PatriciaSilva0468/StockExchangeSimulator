@@ -2,7 +2,7 @@ package source_packages;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
+/**@author  Patricia Aparecida Da Silva (s2017146)
  * Implementation of the Results interface.
  * Supporting the bridge pattern
  */

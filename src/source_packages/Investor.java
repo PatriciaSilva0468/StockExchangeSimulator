@@ -1,13 +1,14 @@
-package source_packages;
-import java.util.ArrayList;
-
-/**
+/**@author  Patricia Aparecida Da Silva (s2017146)
  * This represents an Investor with attributes:
  * id,
  * budget
  * number of shares bought
  * the transactions (each will contain one share bought)
  */
+package source_packages;
+
+import java.util.ArrayList;
+
 public class Investor {
     private int id;
     private double budget;

@@ -1,4 +1,4 @@
-/**
+/**@author  Patricia Aparecida Da Silva (s2017146)
  * This thread will run for one investor.
  * The investor will iterate over all the companies and try to buy maximum
  * number of shares in maximum companies he can buy with his budget. This thread ends once the

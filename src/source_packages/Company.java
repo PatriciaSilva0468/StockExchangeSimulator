@@ -1,4 +1,4 @@
-/**
+/**@author  Patricia Aparecida Da Silva (s2017146)
  * This class represents Company.
  * It has an id, number of shares (which might be updated later),
  * original shares (cannot be updated),
