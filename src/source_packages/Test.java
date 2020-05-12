@@ -1,5 +1,4 @@
 package source_packages;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -41,8 +40,13 @@ public class Test {
         // perform trading day
         simulator.performTradingDay();
 
+        //  simulator.printEverything();
+
+
         // get results of trading day
         simulator.getResults();
+
+
 
     }
 
