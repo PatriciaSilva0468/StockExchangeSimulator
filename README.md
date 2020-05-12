@@ -1,4 +1,4 @@
-# StockExchangeSimulator
+# Stock Exchange Simulator
 The chosen patterns:
 
 1. Bridge Pattern - Structural Pattern:
