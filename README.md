@@ -26,4 +26,4 @@ The Singleton Pattern ensures that there exists only one object of a class in en
 
 - StockExchangeSimulator class
 
-Since there is going to only one Stock Exchange in the project with 100 investors and 100 companies, we made sure that there exists only one object of Stock Exchange.
+Since there is going to only one Stock Exchange in the project with 100 investors and 100 companies, I made sure that there exists only one object of Stock Exchange.
