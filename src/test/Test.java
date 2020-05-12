@@ -44,7 +44,8 @@ public class Test {
         // perform trading day
         simulator.performTradingDay();
 
-        //  simulator.printEverything();
+        //Uncomment this statement and then run the Test class. So, by this, you will see all the companies state and the investors state at the end of the trading day.
+        //simulator.printEverything();
 
 
         // get results of trading day
