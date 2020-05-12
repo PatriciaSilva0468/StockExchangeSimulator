@@ -7,14 +7,17 @@
  */
 package source_packages;
 
+//Importing java ArrayList utility
 import java.util.ArrayList;
 
+//This is my class Investor
 public class Investor {
     private int id;
     private double budget;
     private int numberOfSharesBought;
     private ArrayList<Transaction> transactions;
 
+    //This constructor set transactions has ArrayList
     public Investor() {
         transactions = new ArrayList<>();
     }

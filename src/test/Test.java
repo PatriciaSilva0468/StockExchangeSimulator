@@ -11,7 +11,9 @@ import source_packages.StockExchangeSimulator;
  * It adds random companies and investors in the Stock Exchange, and executes the trading day
  * in Stock Exchange and at the end calls the results of the trading day
  */
-public class Test {
+
+	//This is my class Test
+	public class Test {
     public static void main(String[] args) {
         // getting the only object of this StockExchangeSimulator
         StockExchangeSimulator simulator = StockExchangeSimulator.getStockExchangeSimulator();

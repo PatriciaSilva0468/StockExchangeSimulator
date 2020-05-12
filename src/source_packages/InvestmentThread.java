@@ -6,9 +6,11 @@
  */
 package source_packages;
 
+//This is my InvestmentThread class that implements Runnable
 public class InvestmentThread implements Runnable {
     private Investor investor;
 
+    //Default constructor has investor as a parameter
     public InvestmentThread(Investor investor) {
         this.investor = investor;
     }

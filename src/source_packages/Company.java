@@ -7,6 +7,7 @@
  */
 package source_packages;
 
+//This is my company class
 public class Company {
     private int id;
     private int numberOfShares;
@@ -16,14 +17,17 @@ public class Company {
     private int sharesSold;
     private double companyCapital;
 
+    //GetOriginalShares method
     public int getOriginalShares() {
         return originalShares;
     }
 
+    //setOriginalShares method as originalShares as a parameter
     public void setOriginalShares(int originalShares) {
         this.originalShares = originalShares;
     }
 
+    //Setters and getters for my company class
     public int getId() {
         return id;
     }

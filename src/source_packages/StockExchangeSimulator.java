@@ -5,6 +5,7 @@ package source_packages;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+//This is my class StockExchangeSimulator
 public class StockExchangeSimulator {
     private ArrayList<Company> companies;
     private ArrayList<Investor> investors;
@@ -12,6 +13,7 @@ public class StockExchangeSimulator {
     private boolean completed;
     private Results results;
 
+    //Following statement creates an object stockExchangeSimulator
     private static StockExchangeSimulator stockExchangeSimulator
             = new StockExchangeSimulator();
 
@@ -19,10 +21,12 @@ public class StockExchangeSimulator {
         return stockExchangeSimulator;
     }
 
+    //Companies will be stored in an ArrayList
     public void setCompanies(ArrayList<Company> companies) {
         this.companies = companies;
     }
 
+  //Investors will be stored in an ArrayList
     public void setInvestors(ArrayList<Investor> investors) {
         this.investors = investors;
     }
@@ -60,6 +64,7 @@ public class StockExchangeSimulator {
 
     }
 
+    /* Print the companies details */
     public void printEverything() {
         System.out.println("The companies:  ");
         for (Company company : companies) {
@@ -73,6 +78,7 @@ public class StockExchangeSimulator {
 
         }
 
+        /* Print the investors details */
         System.out.println("The investors:  ");
         for (Investor investor : investors) {
             System.out.println("ID:  " + investor.getId());
@@ -87,10 +93,12 @@ public class StockExchangeSimulator {
     }
 
 
+    //Print the results
     public void getResults() {
         results.printTheMenu();
     }
 
+    //Sorting investors by number of shares bought
     public void sortInvestorsByNumbersOfSharesBought() {
         investors.sort(new Comparator<Investor>() {
             @Override
@@ -101,6 +109,7 @@ public class StockExchangeSimulator {
 
     }
 
+    //Sorting companies by capital
     public void sortCompaniesByCapital() {
         companies.sort(new Comparator<Company>() {
             @Override
@@ -112,6 +121,7 @@ public class StockExchangeSimulator {
 
     }
 
+    //Sorting companies by share price
     public void sortCompaniesBySharePrice() {
         companies.sort(new Comparator<Company>() {
             @Override
@@ -122,6 +132,7 @@ public class StockExchangeSimulator {
 
     }
 
+    //Get and return company Iterator
     public CompanyIterator getCompanyIterator() {
         return new CompanyIterator();
     }

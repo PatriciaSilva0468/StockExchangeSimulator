@@ -4,6 +4,7 @@
  */
 package source_packages;
 
+//Implementing interface Results to achieve inheritance
 public interface Results {
     void printMaxCapitalCompany();
     void printMinCapitalCompany();

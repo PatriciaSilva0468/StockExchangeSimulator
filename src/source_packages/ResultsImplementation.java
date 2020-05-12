@@ -6,6 +6,8 @@ import java.util.Scanner;
  * Implementation of the Results interface.
  * Supporting the bridge pattern
  */
+
+//This is my class ResultsImplementation that implements the interface Results
 public class ResultsImplementation implements Results {
     private ArrayList<Company> companies;
     private ArrayList<Investor> investors;

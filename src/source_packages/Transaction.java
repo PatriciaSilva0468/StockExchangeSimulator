@@ -5,7 +5,9 @@
  * and share price of the share bought
  */
 package source_packages;
-public class Transaction {
+
+    //This is my class Transaction
+    public class Transaction {
     private int investorID;
     private double sharePrice;
     private int companyID;
